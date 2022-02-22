@@ -1,0 +1,4 @@
+STEPS
+1. Ensure all intervals are sorted.
+2. Iterate the intervals
+3. Merge all overlapping patterns.
