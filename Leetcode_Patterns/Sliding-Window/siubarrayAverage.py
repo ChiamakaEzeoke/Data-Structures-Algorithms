@@ -2,9 +2,6 @@
 
 #BRUT FORCE
 #Time Complexity: O(n*k)
-from numpy import result_type
-
-
 nums = [1, 3, 2, 6, -1, 4, 1, 8, 2]
 k = 5
 """
