@@ -2,8 +2,8 @@
 #Refernce: askpython.com
 
 class trieNode:
-    def __init__(self):
-        self.children = {}
+    def __init__(self, char):
+        self.char = char
         self.endOfWord = False
         self.children = {}
 
@@ -17,11 +17,10 @@ class Trie(object):
         node = self.root
 
         for char in word:
-            if node in node.children:
+            if char in node.children:
                 node = node.children[char]
             else:
                 new_node = trieNode(char)
-
                 node.children[char] = new_node
                 node = new_node
         node.endOfWord = True
@@ -36,7 +35,7 @@ class Trie(object):
     def search(self, val):
         node = self.root
         for char in val:
-            if char in val.children:
+            if char in node.children:
                 node = node.children[char]
             else:
                 return []
@@ -45,3 +44,12 @@ class Trie(object):
         self.dfs(node, val[:-1])
 
         return self.output
+
+tr = Trie()
+tr.insert("dough")
+tr.insert("dog")
+tr.insert("doughnut")
+tr.insert("dot")
+tr.insert("time")
+
+print(tr.search("do"))
